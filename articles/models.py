@@ -1,4 +1,5 @@
 from datetime import date
+from email.policy import default
 from pyexpat import model
 from turtle import title
 from django.db import models
@@ -8,7 +9,7 @@ class Articles(models.Model):
     slug= models.SlugField()
     body= models.TextField()
     date= models.DateTimeField(auto_now_add= True)
-    #ax
+    image= models.ImageField(default= 'default.jpg', blank= True)
     #author
 
     def __str__(self):
